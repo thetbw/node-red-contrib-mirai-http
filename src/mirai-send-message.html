@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mirai-send-message', {
+        category: 'Mirai',
+        paletteLabel: "send message",
+        color: '#66ccff',
+        icon: "mirai.png",
+        defaults: {
+            name: {value: ""},
+            server: {value: "", type: "mirai-server-config"},
+            target_type: {value: "friend", required: true},
+            target: {value: ""},
+            send_type: {value: "text", required: true},
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function () {
+            return this.name || "send message";
+        }
+    });
+</script>
+
+
+<script type="text/html" data-template-name="mirai-send-message">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> 节点名称</label>
+        <input type="text" id="node-input-name" placeholder="请输入节点名称">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-tag"></i> 服务器地址</label>
+        <select type="text" id="node-input-server" placeholder="需要连接的mirai服务器配置">
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-target_type"><i class="fa fa-users"></i> 发送目标类型</label>
+        <select type="text" id="node-input-target_type" placeholder="请选择发送目标类型">
+            <option value="friend">好友</option>
+            <option value="group">群</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-target"><i class="fa fa-qq"></i> 目标QQ号</label>
+        <input type="text" id="node-input-target" placeholder="请输入发送目标QQ号">
+    </div>
+    <div class="form-row">
+        <label for="node-input-send_type"><i class="fa fa-code"></i> 消息类型</label>
+        <select type="text" id="node-input-send_type" placeholder="请选择发送消息类型">
+            <option value="text">纯文本</option>
+            <option value="raw">原始JSON文件</option>
+        </select>
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="mirai-send-message">
+    <p>QQ机器人模块</p>
+</script>
+

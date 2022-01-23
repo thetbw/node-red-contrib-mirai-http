@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mirai-server-config', {
+        category: 'config',
+        paletteLabel: "mirai config",
+        icon: "mirai.png",
+        color: '#66ccff',
+        defaults: {
+            name: {value: ""},
+            server_url: {value: "", required: true},
+            server_key: {value: "", required: true},
+            server_main_bot_id: {value: "", required: true},
+        },
+        label: function () {
+            return this.name || "mirai config";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="mirai-server-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-bookmark"></i> 名称</label>
+        <input type="text" id="node-config-input-name" placeholder="请输入配置名称">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-server_url"><i class="fa fa-link"></i> 服务器地址</label>
+        <input type="text" id="node-config-input-server_url" placeholder="请输入服务器地址">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-server_key"><i class="fa fa-key"></i> Key</label>
+        <input type="text" id="node-config-input-server_key" placeholder="请输入服务器连接的key">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-server_main_bot_id"><i class="fa fa-qq"></i> 机器人ID</label>
+        <input type="text" id="node-config-input-server_main_bot_id" placeholder="请输入需要使用的机器人ID(QQ号)">
+    </div>
+</script>
